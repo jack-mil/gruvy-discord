@@ -4,6 +4,10 @@ This is my modification to a custom css theme of Discord.
 Thanks to [ElKowar](https://github.com/elkowar/a-box-of-gruv) for the original, check out the other themes he has here https://github.com/elkowar/a-box-of-gruv.
 
 
+#### Already have the Stylus Extension?  
+[![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/jack-mil/gruvy-discord/master/discord-gruvbox.user.css)
+
+
 ## Changes
 
 I didn't want to setup BetterDiscord or BeautifulDiscord as originally suggested, so I use this theme with Discord Web. It works great!
