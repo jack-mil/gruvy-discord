@@ -34,10 +34,11 @@ I also tweaked a few visuals and colors to my liking
 
 This theme uses special fonts. You'll have to either install them or change the fonts in the CSS file.
 
+> Note: Fira Code is now served in the CSS, so no need to install that. The bitmap TTF font `Terminus (TTF)` is still required. Font will fallback to default otherwise
+
 Fonts used:
 - [`Terminus (TTF)`](https://files.ax86.net/terminus-ttf/) (main font)
 - [`Fira Code`](https://github.com/tonsky/FiraCode) (code blocks)
-
 
 ### Installation
 
