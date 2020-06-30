@@ -41,8 +41,10 @@ Fonts used:
 
 ### Installation
 
+> :bangbang: NEW: After installing Stylus, just click the badge at the top to install
+
 It's just a custom CSS for Discord Web. You could copy and paste into the header using Chrome inspector if you wanted. But you don't to do *that* every time.  
-The `stylus` browser extension (available for Chrome and Firefox and probably more) can be used to apply themes to any website (cool!).
+The [`Stylus`](https://add0n.com/stylus.html) browser extension (available for Chrome and Firefox and probably more) can be used to apply themes to any website (cool!).
 
 Instructions from [ElKowar](https://github.com/elkowar/a-box-of-gruv):
 
