@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Gruvbox-Discord
 @namespace      https://github.com/jack-mil/gruvy-discord
-@version        1.2.0
+@version        1.2.2
 @homepageURL    https://github.com/jack-mil/gruvy-discord
 @updateURL      https://raw.githubusercontent.com/jack-mil/gruvy-discord/master/discord-gruvbox.user.css
 @description    Gruvbox colors for Discord (web). Modified from https://github.com/elkowar/a-box-of-gruv
@@ -222,11 +222,17 @@
     [class*="divider"][class*="isUnread"] {
         border-color: var(--red) !important;
     }
-    [class*="unreadPill-"] {
+     [class*="unreadPill-"] {
         background-color: var(--red);
-    }
+    } 
     [class*="unreadPillCap"] {
         fill: var(--red);
+    }
+    [id*="channels"] > div[class*="unread-"] { /* Channel unread dot */
+         background-color:var(--accent2) 
+    }
+    div.pill-1m5BUr.wrapper-sa6paO > span { /* Server unread dot */
+        background-color: var(--accent2)
     }
     button[class*="lookFilled"] {
         color: var(--fg1) !important;
