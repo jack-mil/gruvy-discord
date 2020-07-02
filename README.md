@@ -4,10 +4,10 @@ This is my modification to a custom css theme of Discord.
 Thanks to [ElKowar](https://github.com/elkowar/a-box-of-gruv) for the original, check out the other themes he has here https://github.com/elkowar/a-box-of-gruv.
 
 
-#### Already have the Stylus Extension?  
+#### Already have the [Stylus](https://add0n.com/stylus.html) Extension?  
 [![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/jack-mil/gruvy-discord/master/discord-gruvbox.user.css)
 
-
+Check out [showcase](https://github.com/jack-mil/gruvy-discord#showcase)
 ## Changes
 
 I didn't want to setup BetterDiscord or BeautifulDiscord as originally suggested, so I use this theme with Discord Web. It works great!
@@ -24,10 +24,9 @@ Before                     | After
 </details>
 </br>
 
-I also tweaked a few visuals and colors to my liking
+I also tweaked a few visuals and colors to my liking.
 
-> **Note:** On Windows, I had to change references to `"Terminus (TTF)"` in the css to `"Terminus (TTF) for Windows`". You might need to change this...
-
+The style uses Stylus and `.user.css` preprocessor features like auto-updating and user config if installed with the badge above.
 
 
 ### Prerequisites
@@ -40,14 +39,21 @@ Fonts used:
 - [`Terminus (TTF)`](https://files.ax86.net/terminus-ttf/) (main font)
 - [`Fira Code`](https://github.com/tonsky/FiraCode) (code blocks)
 
+> **Note:** Depending on the Terminus that you install, you may need to change body font to "`Terminus (TTF) for Windows`" (note quotes). This can be done in the style configuration.
+
+
 ### Installation
 
-> :bangbang: NEW: After installing Stylus, just click the badge at the top to install
+Install the [Stylus](https://add0n.com/stylus.html) browser extension (available for Chrome and Firefox and probably more) to apply themes to any website (cool!)
 
-It's just a custom CSS for Discord Web. You could copy and paste into the header using Chrome inspector if you wanted. But you don't to do *that* every time.  
-The [`Stylus`](https://add0n.com/stylus.html) browser extension (available for Chrome and Firefox and probably more) can be used to apply themes to any website (cool!).
+> :bangbang: After installing Stylus, just click the badge to install!
 
-Instructions from [ElKowar](https://github.com/elkowar/a-box-of-gruv):
+[![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/jack-mil/gruvy-discord/master/discord-gruvbox.user.css)
+
+Or, manually, see instructions from [ElKowar](https://github.com/elkowar/a-box-of-gruv):
+
+<details>
+    <summary>Manual Installation</summary>
 
 After installing the extension, click on the little icon and go to `manage`.
 In there, you *enable* `as Usercss` and click on "write new style".
@@ -55,10 +61,19 @@ In there, you *enable* `as Usercss` and click on "write new style".
 ![newstyle](./images/writenewstyle.png)
 
 Now, select all of the text that is already there, and delete it.
-The next step is to paste in the contents of the desired `.styl` file.
+The next step is to paste in the contents of the desired `.user.css` file.
 
 If you want to change anything, make sure you set the CSS Linter to "Stylelint", 
 as that one will accept the stylus syntax used here.
+</details>
+
+### Config
+
+You can choose the fonts (body and code) if you don't like the default. After installing, click the little cog in `"manage"` or the extension icon in your browser.
+___
+![config](./images/config.png)
+___
+![config2](./images/config2.png)
 
 ### Showcase
 
@@ -69,8 +84,3 @@ Original showcase by [ElKowar](https://github.com/elkowar/a-box-of-gruv)
 
 ![discord](images/discord.gif)
 </details>
-
-### Desktop
-If you *have* a css loader for Discord desktop, or want to get one, this same theme should work fine. Just copy the css, remove the wrapping Userstyle syntax  
-`@-moz-document url-prefix("https://discord.com/") {`  
-and save it in a file with `.css` extension.

@@ -1,48 +1,47 @@
 /* ==UserStyle==
 @name           Gruvbox-Discord
 @namespace      https://github.com/jack-mil/gruvy-discord
-@version        1.2.2
+@version        1.3.2
 @homepageURL    https://github.com/jack-mil/gruvy-discord
 @updateURL      https://raw.githubusercontent.com/jack-mil/gruvy-discord/master/discord-gruvbox.user.css
 @description    Gruvbox colors for Discord (web). Modified from https://github.com/elkowar/a-box-of-gruv
 @author         jack-mil (https://github.com/jack-mil)
 @license        MIT
+
+@preprocessor default
+@var text fontMain "Main Body Font (wrap in quotes)" "Terminus (TTF)"
+@var text fontCode "Code Block Font" "Fira Code"
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://discord.com/channels") {
     /* get Fira Code web fonts */
     @font-face {
         font-family: 'Fira Code';
-        src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff2/FiraCode-Light.woff2') format('woff2'), 
-            url("https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff/FiraCode-Light.woff") format("woff");
+        src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff2/FiraCode-Light.woff2') format('woff2'), url("https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff/FiraCode-Light.woff") format("woff");
         font-weight: 300;
         font-style: normal;
     }
     @font-face {
         font-family: 'Fira Code';
-        src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff2/FiraCode-Regular.woff2') format('woff2'), 
-            url("https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff/FiraCode-Regular.woff") format("woff");
+        src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff2/FiraCode-Regular.woff2') format('woff2'), url("https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff/FiraCode-Regular.woff") format("woff");
         font-weight: 400;
         font-style: normal;
     }
     @font-face {
         font-family: 'Fira Code';
-        src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff2/FiraCode-Medium.woff2') format('woff2'), 
-            url("https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff/FiraCode-Medium.woff") format("woff");
+        src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff2/FiraCode-Medium.woff2') format('woff2'), url("https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff/FiraCode-Medium.woff") format("woff");
         font-weight: 500;
         font-style: normal;
     }
     @font-face {
         font-family: 'Fira Code';
-        src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff2/FiraCode-SemiBold.woff2') format('woff2'), 
-            url("https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff/FiraCode-SemiBold.woff") format("woff");
+        src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff2/FiraCode-SemiBold.woff2') format('woff2'), url("https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff/FiraCode-SemiBold.woff") format("woff");
         font-weight: 600;
         font-style: normal;
     }
     @font-face {
         font-family: 'Fira Code';
-        src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff2/FiraCode-Bold.woff2') format('woff2'), 
-            url("https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff/FiraCode-Bold.woff") format("woff");
+        src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff2/FiraCode-Bold.woff2') format('woff2'), url("https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff/FiraCode-Bold.woff") format("woff");
         font-weight: 700;
         font-style: normal;
     }
@@ -70,8 +69,6 @@
         --yellow: #fabd2f;
         --border1: #223344;
         --border2: #334455;
-        /*  ----  */
-        --code-font: 'Fira Code', monospace;
         /*  ----  */
         -moz-tab-size: 4;
         tab-size: 4;
@@ -107,21 +104,21 @@
         --background-message-hover: var(--bg2) !important;
     }
     * body {
-        font-family: 'Terminus (TTF) for Windows', Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-family: var(--fontMain), Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
         font-weight: normal;
         font-size: 1rem;
     }
     /* code formatted messages */
     [class*="markup"] code,
     [class*="markup"] code.inline {
-        font-family: var(--code-font);
+        font-family: var(--fontCode), monospace;
         background: var(--bgcode);
         color: var(--header-secondary);
     }
     /* code in the text box */
     span[class*=inlineCode],
     span[class*=code] {
-        font-family: var(--code-font);
+        font-family: var(--fontCode), monospace;
         background: var(--bgcode);
         color: var(--header-secondary);
         font-size: 85%;
@@ -152,7 +149,7 @@
     [class*="members"][class*="scroller"] {
         box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.2);
     }
-/*     [class*="scrollerWrap"] {
+    /*     [class*="scrollerWrap"] {
         border-radius: 10px !important;
     } */
     [class*="membersWrap"] {
@@ -222,16 +219,18 @@
     [class*="divider"][class*="isUnread"] {
         border-color: var(--red) !important;
     }
-     [class*="unreadPill-"] {
+    [class*="unreadPill-"] {
         background-color: var(--red);
-    } 
+    }
     [class*="unreadPillCap"] {
         fill: var(--red);
     }
-    [id*="channels"] > div[class*="unread-"] { /* Channel unread dot */
-         background-color:var(--accent2) 
+    [id*="channels"]>div[class*="unread-"] {
+        /* Channel unread dot */
+        background-color: var(--accent2)
     }
-    div.pill-1m5BUr.wrapper-sa6paO > span { /* Server unread dot */
+    div.pill-1m5BUr.wrapper-sa6paO>span {
+        /* Server unread dot */
         background-color: var(--accent2)
     }
     button[class*="lookFilled"] {
