@@ -1,8 +1,7 @@
 /* ==UserStyle==
 @name           Gruvbox-Discord
 @namespace      https://github.com/jack-mil/gruvy-discord
-@version        1.3.2
-@homepageURL    https://github.com/jack-mil/gruvy-discord
+@version        1.4.0
 @updateURL      https://raw.githubusercontent.com/jack-mil/gruvy-discord/master/discord-gruvbox.user.css
 @description    Gruvbox colors for Discord (web). Modified from https://github.com/elkowar/a-box-of-gruv
 @author         jack-mil (https://github.com/jack-mil)
@@ -13,39 +12,50 @@
 @var text fontCode "Code Block Font" "Fira Code"
 ==/UserStyle== */
 
+
 @-moz-document url-prefix("https://discord.com/channels") {
+
     /* get Fira Code web fonts */
+
     @font-face {
         font-family: 'Fira Code';
         src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff2/FiraCode-Light.woff2') format('woff2'), url("https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff/FiraCode-Light.woff") format("woff");
         font-weight: 300;
         font-style: normal;
     }
+
     @font-face {
         font-family: 'Fira Code';
         src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff2/FiraCode-Regular.woff2') format('woff2'), url("https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff/FiraCode-Regular.woff") format("woff");
         font-weight: 400;
         font-style: normal;
     }
+
     @font-face {
         font-family: 'Fira Code';
         src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff2/FiraCode-Medium.woff2') format('woff2'), url("https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff/FiraCode-Medium.woff") format("woff");
         font-weight: 500;
         font-style: normal;
     }
+
     @font-face {
         font-family: 'Fira Code';
         src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff2/FiraCode-SemiBold.woff2') format('woff2'), url("https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff/FiraCode-SemiBold.woff") format("woff");
         font-weight: 600;
         font-style: normal;
     }
+
     @font-face {
         font-family: 'Fira Code';
         src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff2/FiraCode-Bold.woff2') format('woff2'), url("https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/woff/FiraCode-Bold.woff") format("woff");
         font-weight: 700;
         font-style: normal;
     }
-     :root {
+
+    :root {
+        /* Change these fonts to what you have installed */
+        --fontMain: "Terminus (TTF) for Windows";
+        --fontCode: "Fira Code";
         /*  ----  */
         --bg1: #282828;
         --bg2: #222222;
@@ -73,6 +83,10 @@
         -moz-tab-size: 4;
         tab-size: 4;
     }
+
+
+    /* Discord theme variables */
+
     .theme-dark {
         --header-primary: var(--fg2);
         --header-secondary: var(--fg2);
@@ -103,19 +117,29 @@
         --elevation-low: none !important;
         --background-message-hover: var(--bg2) !important;
     }
+
+
+    /* fallback to default fonts */
+
     * body {
         font-family: var(--fontMain), Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
         font-weight: normal;
         font-size: 1rem;
     }
+
+
     /* code formatted messages */
+
     [class*="markup"] code,
     [class*="markup"] code.inline {
         font-family: var(--fontCode), monospace;
         background: var(--bgcode);
         color: var(--header-secondary);
     }
-    /* code in the text box */
+
+
+    /* code in text box */
+
     span[class*=inlineCode],
     span[class*=code] {
         font-family: var(--fontCode), monospace;
@@ -123,123 +147,230 @@
         color: var(--header-secondary);
         font-size: 85%;
     }
+
+
     /* code language specifier */
+
     span[class*=codeBlockLang] {
         color: var(--purple);
     }
-     ::-webkit-scrollbar,
-     ::-webkit-scrollbar-track,
-     ::-webkit-scrollbar-track-handle,
-     ::-webkit-scrollbar-track-piece {
-        border-color: rgba(0, 0, 0, 0) !important;
+
+
+    /* scrollbar restyling and color */
+
+    ::-webkit-scrollbar,
+    ::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-track-handle,
+    ::-webkit-scrollbar-track-piece {
+        border-color: rgb(0, 0, 0, 0) !important;
         background-color: rgba(0, 0, 0, 0) !important;
     }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--accent) !important;
+    }
+
+
     /* sections */
+
     [class*="peopleColumn"] {
         background-color: var(--bg2);
     }
+
     [class*="section"] {
         background-color: var(--bg3);
     }
+
+
+    /* Server name sidebar header */
+
     [class*="sidebar"] [class*="container"] [class*="header"] {
-        background-color: var(--bg1);
-        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+        background-color: var(--bg3);
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
     }
+
+
+    /* Server channels sidebar */
+
     [class*="sidebar"]>[class*="container"],
     [class*="members"][class*="scroller"] {
-        box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.2);
+        box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.3);
     }
-    /*     [class*="scrollerWrap"] {
+
+
+    /* [class*="scrollerWrap"] {
         border-radius: 10px !important;
     } */
+
+
+    /* channel members sidebar */
+
     [class*="membersWrap"] {
-        /*border-top-left-radius: 15px;*/
+        border-top-left-radius: 15px;
         overflow: hidden;
     }
+
+
     /* message input area */
+
     [class*="chatContent"] [class*="form"] {
         padding-top: 0.5rem;
         background-color: var(--bg1);
         box-shadow: 0 -30px 20px -30px rgba(0, 0, 0, 0.3);
     }
+
     [class*="textAreaSlate"] {
         background-color: var(--bg3);
         border-radius: 13px;
         color: var(--fg-2);
-        box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.1);
+        box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.2);
     }
+
     [class*="textAreaSlate"]>* {
         padding-left: 1rem;
         padding-right: 1rem;
     }
-    /* components */
+
+
+    /* search bar color */
+
+    div[class*="chat"] div[class*=toolbar] div[class*="searchBar"] {
+        background-color: var(--background-secondary);
+    }
+
+
+    /* buttons */
+
     button[class*="lookFilled"] {
         background-color: var(--button);
     }
+
     button[class*="buttonActive"][class*="lookFilled"] {
         background-color: var(--accent) !important;
         color: var(--bg1) !important;
     }
+
     button[class*="lookLink"] {
         color: var(--fg1) !important;
     }
+
+
+    /* usernames, avatars, and sprites */
+
     [class*="sprite"] {
         filter: brightness(80%) sepia(80%) saturate(60%) !important;
     }
+
     [class*="username"] {
         filter: sepia(30%) !important;
         transition: filter 0.2s;
         font-weight: 600;
     }
+
     [class*="username"]:hover {
         filter: sepia(90%) !important;
     }
+
     [class*="newMessagesBar-"] {
         background-color: var(--accent);
         opacity: 1;
     }
+
     [class*="newMessagesBar-"] button {
         color: var(--bg1) !important;
     }
+
     img[class*="avatar"][class*="clickable"] {
         filter: sepia(50%);
         transition: filter 0.1s, transform 0.1s ease-in-out;
         border-radius: 10%;
     }
+
     img[class*="avatar"][class*="clickable"]:hover {
-        filter: sepia(10%);
+        filter: sepia(0%);
         transform: scale(1.05);
     }
+
     [class*="pictureInPictureWindow"] {
         box-shadow: 0 8px 15px 0px rgba(0, 0, 0, 0.5) !important;
     }
+
+
+    /* message date divider */
+
     [class*="divider"] {
-        border-color: var(--bg3);
+        border-color: var(--accent);
     }
+
+
+    /* unread divider */
+
     [class*="divider"][class*="isUnread"] {
         border-color: var(--red) !important;
     }
+
     [class*="unreadPill-"] {
         background-color: var(--red);
     }
+
     [class*="unreadPillCap"] {
         fill: var(--red);
     }
-    [id*="channels"]>div[class*="unread-"] {
-        /* Channel unread dot */
-        background-color: var(--accent2)
+
+
+    /* channel unread dot */
+
+    #channels div[class^="unread-"] {
+        background-color: var(--accent)
     }
-    div.pill-1m5BUr.wrapper-sa6paO>span {
-        /* Server unread dot */
-        background-color: var(--accent2)
+
+
+    /* server selected and unread dot */
+
+    div[class^="pill-"][class^="wrapper"]>span {
+        background-color: var(--accent)
     }
+
+    div[class*="pill-"][class*="wrapper"]>span[class*="item-"] {
+        background-color: var(--interactive-active);
+    }
+
     button[class*="lookFilled"] {
         color: var(--fg1) !important;
     }
-    [class*="live"][class*="textBadge"] {
-        background-color: var(--red) !important;
-        color: var(--fg1);
+
+
+    /* server folders and icons */
+
+    div[class^="blobContainer"] foreignObject {
+        filter: sepia(50%);
     }
+
+    div[class^="folderIconWrapper"] {
+        background: transparent !important;
+        /* disable blue overlay */
+    }
+
+    div[class^="closedFolderIconWrapper"] {
+        /* `accent` (green) with opacity */
+        background-color: rgba(131, 192, 124, 0.4) !important;
+    }
+
+    div[class^="expandedFolderIconWrapper"]>svg {
+        color: var(--accent) !important;
+    }
+
+
+    /* discord logo color (DMs) */
+
+    a[class*="wrapper"][class*="selected"] [class^="childWrapper"],
+    a[class^="wrapper"]:hover [class^="childWrapper"] {
+        background-color: var(--accent) !important;
+    }
+
+
+    /* various modals; WIP */
+
     [class*="modal"] [class*="queryContainer-"],
     [class*="modal"] [class*="resultsGroup-"],
     [class*="modal"] [class*="bodyInner-"],
@@ -249,27 +380,33 @@
     [class*="modal"] [class*="uploadModal-"] {
         background-color: var(--bg1) !important;
     }
+
+
+    /*go live source selector header bar*/
+
+    [class*="live"][class*="textBadge"] {
+        background-color: var(--red) !important;
+        color: var(--fg1);
+    }
+
     [class*="modal"] [class*="sourceScroller"],
-    [class*="modal"] [class*="segmentContainer-"] [class*="segmentControl"]/*go live source selector header bar*/
-    {
+    [class*="modal"] [class*="segmentContainer-"] [class*="segmentControl"] {
         background-color: var(--bg3) !important;
     }
+
     [class*="modal"] [class*="header"] {
         padding: 0.4rem;
         padding-top: unset;
     }
+
     [class*="modal"] [class*="footer-"] {
         background-color: var(--bg3) !important;
         filter: brightness(110%);
     }
+
     [class*="panels"]>*:nth-child(2) {
         height: 4.6rem;
         padding-bottom: 0.5rem;
     }
-    div[class*="chat"] div[class*="root"] {
-        background-color: #282828;
-    }
-    div[class*="chat"] div[class*="root"] canvas {
-        border-radius: 20px;
-    }
+
 }
